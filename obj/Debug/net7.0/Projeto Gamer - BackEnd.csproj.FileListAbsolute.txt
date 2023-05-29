@@ -1,0 +1,31 @@
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\appsettings.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\Projeto Gamer - BackEnd.staticwebassets.runtime.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\Projeto Gamer - BackEnd.exe
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\Projeto Gamer - BackEnd.deps.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\Projeto Gamer - BackEnd.runtimeconfig.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\Projeto Gamer - BackEnd.dll
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\bin\Debug\net7.0\Projeto Gamer - BackEnd.pdb
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.csproj.AssemblyReference.cache
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.AssemblyInfoInputs.cache
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.AssemblyInfo.cs
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.RazorAssemblyInfo.cache
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.RazorAssemblyInfo.cs
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\staticwebassets\msbuild.Projeto Gamer - BackEnd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\staticwebassets\msbuild.build.Projeto Gamer - BackEnd.props
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Projeto Gamer - BackEnd.props
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Projeto Gamer - BackEnd.props
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\scopedcss\bundle\Projeto Gamer - BackEnd.styles.css
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\scopedcss\projectbundle\Projeto Gamer - BackEnd.bundle.scp.css
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.dll
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\refint\Projeto Gamer - BackEnd.dll
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.pdb
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\Projeto Gamer - BackEnd.genruntimeconfig.cache
+C:\Users\23655858841\Desktop\Projeto Gamer - BackEnd\obj\Debug\net7.0\ref\Projeto Gamer - BackEnd.dll
