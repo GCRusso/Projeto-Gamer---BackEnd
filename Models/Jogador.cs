@@ -14,6 +14,8 @@ namespace Projeto_Gamer___BackEnd.Models
         //aqui é a FK onde irá herdar, inserir o using System.ComponentModel.DataAnnotations.Schema; e colocar o nome da classe que existe a chave primária, no caso aqui é a classe "Equipe" porque queremos herdar o IdEquipe desta lista.
         [ForeignKey("Equipe")]//inserido no formato de string pois toda classe é inserida como string
         public int IdEquipe { get; set; }
+        //este objeto guarda as informações da Equipe para usar este objeto para ter acesso as Equipes aqui na classe Jogadores.
+        public Equipe Equipe { get; set; }
 
     }
 }
