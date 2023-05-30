@@ -1,6 +1,30 @@
 @model Equipe
 
 @{
-
+    //aqui é o titulo que fica na página, titulo de browser
     ViewData["Title"] = "Equipe";
 }
+<h1>TELA DE EQUIPES</h1>
+
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Imagem</th>
+    </thead>
+
+    <tbody>
+        @*Equipe é um objeto chamar ele como tal, vira o objeto "equipe"*@
+        @foreach (Equipe equipe in ViewBag.Equipe)
+        {
+            <tr>
+                @*para utilizar um objeto dentro de uma tag HTML tem que chamar pelo arroba*@
+                <td>@equipe.IdEquipe</td>
+                <td>@equipe.NomeEquipe</td>
+                <td>@equipe.Imagem</td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
