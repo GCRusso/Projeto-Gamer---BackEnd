@@ -39,7 +39,46 @@ namespace Projeto_Gamer___BackEnd.Controllers
 
             //pegamos o campo Nome e alteramos com o form e transformou ele em string, pq o form não é uma string.
             novaEquipe.NomeEquipe = form["Nome"].ToString();
-            novaEquipe.Imagem = form["Imagem"].ToString();
+
+            //novaEquipe.Imagem = form["Imagem"].ToString(); // aqui estava chegando a imagem como STRING não queremos assim
+
+
+
+
+            //TODO // Inicio da lógica de UPLOAD da imagem.
+            //Se existir uma imagem dentro do FORM ele cadastra dentro da variável FILE no array de número 0
+            if (form.Files.Count > 0)
+            {
+                var file = form.Files[0];
+                //Path.Combine se caso tiver um caminho anterior ele ignora e só visualiza dali pra frente, cria um caminho para criar uma pasta, ele da o ponta pé de inicio do caminho que você deseja
+                //GetCurrentDirectory = pega a pasta corrente que é a pasta principal do arquivo que no caso a nossa é PROJETO GAMER - BACKEND
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+                //se a pasta FOLDER nao for criada, cria uma nova pasta chamada FOLDER
+                if (!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
+
+                //gera o caminho completo até o caminho do arquivo(imagem - com extensão) abre a pasta e vai até o seu arquivo carregado.
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+
+                //pegou o objeto que foi criado(cadastro) e jogou na variavel STREAM e copiou para ser salvo
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+
+                novaEquipe.Imagem = file.FileName;
+            }
+
+            //se caso nao for carregado uma imagem, carregar uma imagem padrão para não ser barrado o cadastro.
+            else
+            {
+                novaEquipe.Imagem = "padrao.png";
+            }
+            //TODO // FIM DA LÓGICA PARA UPLOAD DE IMAGEM
+
+
 
             //puxar o context que é o nosso banco de dados, e inserir o nosso objeto que desejamos colocar no banco de dados
             c.Equipe.Add(novaEquipe);

@@ -8,14 +8,15 @@
 
 @*todo CADASTRO DE EQUIPES *@
 @* quando se cria um form tem que utilizar form aqui tambem *@
-<form  method = "post" action='@Url.Action("Cadastrar")'>
+@*Enctype = fornece um array com alguns arquivos anexados, com uma lista de objetos cadastrados, para carregar o file da imagem*@
+<form  method = "post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
 
     @* Label = Titulo/Nome do form *@
     <label for="">Nome</label>
     <input type="text" name="Nome">
 
     <label for="">Imagem</label>
-    <input type="text" name="Imagem">
+    <input type="file" name="Imagem">
 
     <button type="submit">Cadastrar</button>
 </form>
@@ -23,8 +24,8 @@
 
 
 @*todo TABELA COM EQUIPES *@
-<table>
-    <thead>
+<table class = "table table-striped table-responsive"> @*este comando deixa a tabela mais organizada é um comando do BOOTSTRAP*@
+    <thead> 
         <th>Id</th>
         <th>Nome</th>
         <th>Imagem</th>
