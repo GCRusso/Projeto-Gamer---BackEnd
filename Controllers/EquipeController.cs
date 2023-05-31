@@ -59,8 +59,8 @@ namespace Projeto_Gamer___BackEnd.Controllers
                     Directory.CreateDirectory(folder);
                 }
 
-                //gera o caminho completo até o caminho do arquivo(imagem - com extensão) abre a pasta e vai até o seu arquivo carregado.
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+                //gera o caminho completo até o caminho do arquivo(imagem - com extensão) abre a pasta FOLDER(Equipes) e vai até o seu arquivo(FILE) carregado no seu interior.
+                var path = Path.Combine(folder, file.FileName);
 
                 //pegou o objeto que foi criado(cadastro) e jogou na variavel STREAM e copiou para ser salvo
                 using (var stream = new FileStream(path, FileMode.Create))
