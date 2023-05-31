@@ -6,6 +6,23 @@
 }
 <h1>TELA DE EQUIPES</h1>
 
+@*todo CADASTRO DE EQUIPES *@
+@* quando se cria um form tem que utilizar form aqui tambem *@
+<form  method = "post" action='@Url.Action("Cadastrar")'>
+
+    @* Label = Titulo/Nome do form *@
+    <label for="">Nome</label>
+    <input type="text" name="Nome">
+
+    <label for="">Imagem</label>
+    <input type="text" name="Imagem">
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+
+
+@*todo TABELA COM EQUIPES *@
 <table>
     <thead>
         <th>Id</th>
