@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sCGS1emweFIhDgL6/FL5ZyNjT3YevxT7b8c5lU71LeA=",
+  "Hash": "OREu2enh8vTQiAtm6mZjLYEZG0/sjnPYszEe+LcDEEo=",
   "Source": "Projeto Gamer - BackEnd",
   "BasePath": "_content/Projeto Gamer - BackEnd",
   "Mode": "Default",
@@ -85,6 +85,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\16531435986415_6fur.jpg",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "img/Equipes/16531435986415_6fur.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipes\\16531435986415_6fur.jpg"
+    },
+    {
       "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\download.png",
       "SourceId": "Projeto Gamer - BackEnd",
       "SourceType": "Discovered",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Equipes\\download.png"
+    },
+    {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\padrao.png",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "img/Equipes/padrao.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipes\\padrao.png"
     },
     {
       "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\js\\site.js",

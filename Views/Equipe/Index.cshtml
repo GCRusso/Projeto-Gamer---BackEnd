@@ -29,6 +29,7 @@
         <th>Id</th>
         <th>Nome</th>
         <th>Imagem</th>
+        <th>Ações</th>
     </thead>
 
     <tbody>
@@ -39,9 +40,17 @@
                 @*para utilizar um objeto dentro de uma tag HTML tem que chamar pelo arroba*@
                 <td>@equipe.IdEquipe</td>
                 <td>@equipe.NomeEquipe</td>
-                <td>@equipe.Imagem</td>
+                <td>
+                    <img src="/img/Equipes/@equipe.Imagem" alt="Imagem da Equipe @equipe.NomeEquipe" width = "50px">
+                </td>
+                <td>
+                    @*asp area = alt da imagem *@
+                    @*asp-controller = é da classe controller*@
+                    @*asp-action = é uma ação, no caso excluir*@
+                    @*asp-route-id = rota da onde vc ira excluir*@
+                    <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a>
+                </td>
             </tr>
-
         }
 
     </tbody>

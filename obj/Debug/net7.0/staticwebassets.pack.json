@@ -13,8 +13,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\16531435986415_6fur.jpg",
+      "PackagePath": "staticwebassets\\img\\Equipes\\16531435986415_6fur.jpg"
+    },
+    {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\download.png",
       "PackagePath": "staticwebassets\\img\\Equipes\\download.png"
+    },
+    {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\padrao.png",
+      "PackagePath": "staticwebassets\\img\\Equipes\\padrao.png"
     },
     {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\js\\site.js",

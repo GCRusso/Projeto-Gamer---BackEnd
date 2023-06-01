@@ -43,8 +43,6 @@ namespace Projeto_Gamer___BackEnd.Controllers
             //novaEquipe.Imagem = form["Imagem"].ToString(); // aqui estava chegando a imagem como STRING não queremos assim
 
 
-
-
             //TODO // Inicio da lógica de UPLOAD da imagem.
             //Se existir uma imagem dentro do FORM ele cadastra dentro da variável FILE no array de número 0
             if (form.Files.Count > 0)
@@ -71,9 +69,11 @@ namespace Projeto_Gamer___BackEnd.Controllers
                 novaEquipe.Imagem = file.FileName;
             }
 
+
             //se caso nao for carregado uma imagem, carregar uma imagem padrão para não ser barrado o cadastro.
             else
             {
+                //inserir uma imagem na pasta e colocar com o mesmo nome daqui e formato tambem!
                 novaEquipe.Imagem = "padrao.png";
             }
             //TODO // FIM DA LÓGICA PARA UPLOAD DE IMAGEM
@@ -90,6 +90,45 @@ namespace Projeto_Gamer___BackEnd.Controllers
             // ~ = LOCALHOST
             return LocalRedirect("~/Equipe/Listar");
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //todo Método EXCLUIR
+        //inserido o id para sinalizar que está utilizando um parâmetro para exclusão, por exemplo: http://localhost:5041/Equipe/Excluir/21 irá excluir o ID 21
+        [Route("Excluir/{id}")]
+        //Vamos apagar pelo ID
+        public IActionResult Excluir(int id)
+        {
+            //adicionar em um objeto equipeBuscada... e de equipe, entao e.IdEquipe sera igual ao nosso id declarado acima junto com o método
+            Equipe equipeBuscada = c.Equipe.First(e => e.IdEquipe == id);
+            //remover a equipeBuscada
+            c.Remove(equipeBuscada);
+            //salvar a lista
+            c.SaveChanges();
+            //este return faz a função de listar novamente a lista, mas já atualizada.
+            return LocalRedirect("~/Equipe/Listar");
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
