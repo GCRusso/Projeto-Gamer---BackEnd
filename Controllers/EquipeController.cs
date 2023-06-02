@@ -91,25 +91,13 @@ namespace Projeto_Gamer___BackEnd.Controllers
             return LocalRedirect("~/Equipe/Listar");
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
         //todo Método EXCLUIR
         //inserido o id para sinalizar que está utilizando um parâmetro para exclusão, por exemplo: http://localhost:5041/Equipe/Excluir/21 irá excluir o ID 21
         [Route("Excluir/{id}")]
         //Vamos apagar pelo ID
         public IActionResult Excluir(int id)
         {
-            //adicionar em um objeto equipeBuscada... e de equipe, entao e.IdEquipe sera igual ao nosso id declarado acima junto com o método
+            //adicionar em um objeto equipeBuscada, unir o c que é o nosso context(banco de dados) com a Equipe e insiro First porque é o primeiro objeto encontrado com este id, guarda no "e" verificamos se o "e" é igual a algum id no bancos de dados, se for igual guardar no "equipeBuscada"
             Equipe equipeBuscada = c.Equipe.First(e => e.IdEquipe == id);
             //remover a equipeBuscada
             c.Remove(equipeBuscada);
@@ -119,18 +107,60 @@ namespace Projeto_Gamer___BackEnd.Controllers
             return LocalRedirect("~/Equipe/Listar");
         }
 
+        //todo Método EDITAR
+        [Route("Editar/{id}")]
+        public IActionResult Editar(int id)
+        {
+            Equipe equipe = c.Equipe.First(e => e.IdEquipe == id);
 
+            //guarda na mochila o nosso id procurado em equipe.
+            ViewBag.Equipe = equipe;
 
+            return View("Edit");
+        }
 
+        //todo Método ATUALIZAR
+        [Route("Atualizar")]
+        public IActionResult Atualizar(IFormCollection form)
+        {
+            Equipe novaEquipe = new Equipe();
 
+            novaEquipe.IdEquipe = int.Parse(form["IdEquipe"].ToString());
+            
+            novaEquipe.NomeEquipe = form["Nome"].ToString();
 
+            if (form.Files.Count > 0)
+            {
+                var file = form.Files[0];
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
 
+                if (!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
 
+                var path = Path.Combine(folder, file.FileName);
 
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                novaEquipe.Imagem = file.FileName;
+            }
 
+            else
+            {
+                novaEquipe.Imagem = "padrao.png";
+            }
 
-
-
+            Equipe equipeBuscada = c.Equipe.First(x => x.IdEquipe == novaEquipe.IdEquipe);
+            equipeBuscada.NomeEquipe = novaEquipe.NomeEquipe;
+            equipeBuscada.Imagem = novaEquipe.Imagem;
+            c.Equipe.Update(equipeBuscada);
+            c.SaveChanges();
+            
+            return LocalRedirect("~/Equipe/Listar");
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

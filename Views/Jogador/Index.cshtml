@@ -1,0 +1,46 @@
+ID@model Jogador
+
+@{
+    //aqui é o titulo que fica na página, titulo de browser
+    ViewData["Title"] = "Jogador";
+}
+
+<h1>Tela de Jogadores</h1>
+
+@*todo CADASTRO DE JOGADORES*@
+<form method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+    <label for="">ID</label>
+
+    <label for="">Nome</label>
+    <input type="text" name="Nome">
+
+    <label for="">Email</label>
+    <input type="text" email="Email">
+
+    <label for="">Imagem</label>
+</form>
+
+@*todo TABELA DOS JOGADORES*@
+<table class="table tabl-striped table-responsive">
+
+    <thead>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Imagem</th>
+    </thead>
+
+    <tbody>
+        @foreach (Jogador jogador in ViewBag.Jogador)
+        {
+            <tr>
+                <td>@jogador.NomeJogador</td>
+                <td>@jogador.Email</td>
+            </tr>
+        }
+    </tbody>
+
+
+
+
+</table>

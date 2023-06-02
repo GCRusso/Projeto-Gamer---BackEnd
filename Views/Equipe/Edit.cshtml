@@ -1,0 +1,22 @@
+@model Equipe
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edição de Equipe</h1>
+@*method = post = porque sao dados sensiveis que nao devem mostrar no URL*@
+@*enctype="multipart/form-data = quando ha um formulario com varios tipos de dados, neste caso temos texto e imagem *@
+<form method = "post" action='@Url.Action("Atualizar")' enctype="multipart/form-data">
+    @* para deixar oculto o nosso id *@
+    <input type="hidden" name = "IdEquipe" value="@ViewBag.Equipe.IdEquipe">
+
+    <label for="">Nome</label>
+    @* required no nome, nao será possivel deixar o INPUT vazio *@
+    <input type="text" name="Nome" value="@ViewBag.Equipe.NomeEquipe" required>
+
+    <label for="">Imagem</label>
+    <input type="file" name="Imagem" value="@ViewBag.Equipe.Imagem">
+
+    <button>Atualizar</button>
+</form> 
