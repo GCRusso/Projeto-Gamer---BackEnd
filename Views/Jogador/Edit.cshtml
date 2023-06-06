@@ -1,0 +1,46 @@
+@model Jogador
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edição de Jogadores</h1>
+@*method = post = porque sao dados sensiveis que nao devem mostrar no URL*@
+@*enctype="multipart/form-data = quando ha um formulario com varios tipos de dados, neste caso temos texto e imagem *@
+<form method="post" action='@Url.Action("Atualizar")'>
+    @* para deixar oculto o nosso id *@
+    <input type="hidden" name="IdJogador" value="@ViewBag.Jogador.IdJogador">
+
+    <input type="hidden" name="IdEquipe" value="@ViewBag.Jogador.IdEquipe">
+
+    <label for="">Nome</label>
+    @* required no nome, nao será possivel deixar o INPUT vazio *@
+    <input type="text" name="Nome" value="@ViewBag.Jogador.NomeJogador">
+
+    <label for="">Email</label>
+    <input type="email" name="Email" value="@ViewBag.Jogador.Email">
+
+    <label for="">Senha</label>
+    <input type="password" name="Senha" value="@ViewBag.Jogador.Senha">
+
+    @*Validação*@
+    <label for="">Equipe</label>
+    <select name="IdEquipe" id="IdEquipe">
+        <option value="0">Selecione uma opção: </option>
+        @foreach (Equipe equipe in ViewBag.Equipe)
+        {
+            @if (equipe.IdEquipe == @ViewBag.Jogador.IdEquipe)
+            {
+                <option value="equipe.IdEquipe" selected>@equipe.NomeEquipe</option>
+            }
+            
+            else
+            {
+                <option value="@equipe.IdEquipe">@equipe.NomeEquipe</option>
+            }
+        }
+    </select>
+
+
+    <button>Atualizar</button>
+</form>
