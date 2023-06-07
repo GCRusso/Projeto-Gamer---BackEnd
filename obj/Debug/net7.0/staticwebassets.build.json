@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cVspbFLA57R7lAKP5inMDft+716V60m3+wHliqdLIks=",
+  "Hash": "BKiD4aqL3yvezkjr/mveKVVh8D85ZuwbTDeh13zfqw4=",
   "Source": "Projeto Gamer - BackEnd",
   "BasePath": "_content/Projeto Gamer - BackEnd",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\img\\Equipes\\adasdsa.jpg"
     },
     {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\bulls.png",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "img/Equipes/bulls.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipes\\bulls.png"
+    },
+    {
       "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\download.png",
       "SourceId": "Projeto Gamer - BackEnd",
       "SourceType": "Discovered",
@@ -136,6 +153,40 @@
       "OriginalItemSpec": "wwwroot\\img\\Equipes\\download.png"
     },
     {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\Heat.jfif",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "img/Equipes/Heat.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipes\\Heat.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\i.png",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "img/Equipes/i.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipes\\i.png"
+    },
+    {
       "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\images.jfif",
       "SourceId": "Projeto Gamer - BackEnd",
       "SourceType": "Discovered",
@@ -151,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Equipes\\images.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\nets.png",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "img/Equipes/nets.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Equipes\\nets.png"
     },
     {
       "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\padrao.png",

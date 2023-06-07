@@ -23,7 +23,7 @@
     <label for="">Senha</label>
     <input type="password" name="Senha" value="@ViewBag.Jogador.Senha">
 
-    @*Validação*@
+    @*Validação para mostrar quando for editar o que já está na nossa lista, já vem preenchido os campos*@
     <label for="">Equipe</label>
     <select name="IdEquipe" id="IdEquipe">
         <option value="0">Selecione uma opção: </option>
@@ -31,6 +31,7 @@
         {
             @if (equipe.IdEquipe == @ViewBag.Jogador.IdEquipe)
             {
+                @*selected = aqui que ele mostra o campo preenchido*@
                 <option value="equipe.IdEquipe" selected>@equipe.NomeEquipe</option>
             }
             
@@ -40,7 +41,6 @@
             }
         }
     </select>
-
 
     <button>Atualizar</button>
 </form>

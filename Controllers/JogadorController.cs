@@ -41,6 +41,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
 
             c.Jogador.Add(novoJogador);
             c.SaveChanges();
+            
             return LocalRedirect("~/Jogador/Listar");
         }
 
@@ -68,6 +69,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
 
             //guarda na mochila o nosso id procurado em equipe.
             ViewBag.Jogador = jogador;
+            ViewBag.Equipe = c.Equipe.ToList();
 
             return View("Edit");
         }
@@ -79,7 +81,6 @@ namespace Projeto_Gamer___BackEnd.Controllers
             Jogador jogadorAtualizado = new Jogador();
 
             jogadorAtualizado.IdJogador = int.Parse(form["IdJogador"].ToString());
-            jogadorAtualizado.IdEquipe = int.Parse(form["IdEquipe"].ToString());
 
             jogadorAtualizado.NomeJogador = form["Nome"].ToString();
             jogadorAtualizado.Email = form["Email"].ToString();
