@@ -15,6 +15,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+            //*esta viewbag foi copiada e colada em todas VIEW INDEX E EDITAR em todos os controllers existentes, HOME, JOGADOR E EQUIPE
+            //*Tudo que retornar uma VIEW tem que inserir este dado para mostrar para todas as VIEWS que o jogador esta logado.
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
         return View();
     }
 

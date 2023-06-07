@@ -6,7 +6,12 @@
 
 <h1>Tela de Login</h1>
 
-<form>
+<h2>
+    @TempData.Peek("Message") @*TEMPDATA CRIADA NA CONTROLLER LOGIN, PARA MAIS DETALHES VERIFICAR LÁ*@
+</h2>
+
+<form method="post" action='@Url.Action("Logar")'>
+    
     <label for="">Email</label>
     <input type="email" name="Email" required>
 

@@ -21,6 +21,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
         [Route("Listar")]
         public IActionResult Index()
         {
+            //*esta viewbag foi copiada e colada em todas VIEW INDEX E EDITAR em todos os controllers existentes, HOME, JOGADOR E EQUIPE
+            //*Tudo que retornar uma VIEW tem que inserir este dado para mostrar para todas as VIEWS que o jogador esta logado.
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
             ViewBag.Jogador = c.Jogador.ToList();
             ViewBag.Equipe = c.Equipe.ToList();
 
@@ -41,7 +45,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
 
             c.Jogador.Add(novoJogador);
             c.SaveChanges();
-            
+
             return LocalRedirect("~/Jogador/Listar");
         }
 
@@ -65,6 +69,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
         [Route("Editar/{id}")]
         public IActionResult Editar(int id)
         {
+            //*esta viewbag foi copiada e colada em todas VIEW INDEX E EDITAR em todos os controllers existentes, HOME, JOGADOR E EQUIPE
+            //*Tudo que retornar uma VIEW tem que inserir este dado para mostrar para todas as VIEWS que o jogador esta logado.
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
             Jogador jogador = c.Jogador.First(e => e.IdJogador == id);
 
             //guarda na mochila o nosso id procurado em equipe.

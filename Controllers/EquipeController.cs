@@ -22,6 +22,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
         [Route("Listar")]//isto é um rota chamada Listar funcionamento da rota-> http://localhost/Equipe/Listar
         public IActionResult Index()
         {
+            //*esta viewbag foi copiada e colada em todas VIEW INDEX E EDITAR em todos os controllers existentes, HOME, JOGADOR E EQUIPE
+            //*Tudo que retornar uma VIEW tem que inserir este dado para mostrar para todas as VIEWS que o jogador esta logado.
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
             //nome do objeto, chamar o que desejar listar e invocar o método ToList();
             ViewBag.Equipe = c.Equipe.ToList(); //em uma mala de equipe = adiciona as equipes, armazena as equipes
             return View(); //encaminha para a view de equipe
@@ -111,6 +115,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
         [Route("Editar/{id}")]
         public IActionResult Editar(int id)
         {
+            //*esta viewbag foi copiada e colada em todas VIEW INDEX E EDITAR em todos os controllers existentes, HOME, JOGADOR E EQUIPE
+            //*Tudo que retornar uma VIEW tem que inserir este dado para mostrar para todas as VIEWS que o jogador esta logado.
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
             Equipe equipe = c.Equipe.First(e => e.IdEquipe == id);
 
             //guarda na mochila o nosso id procurado em equipe.
@@ -126,7 +134,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
             Equipe novaEquipe = new Equipe();
 
             novaEquipe.IdEquipe = int.Parse(form["IdEquipe"].ToString());
-            
+
             novaEquipe.NomeEquipe = form["Nome"].ToString();
 
             if (form.Files.Count > 0)
@@ -158,7 +166,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
             equipeBuscada.Imagem = novaEquipe.Imagem;
             c.Equipe.Update(equipeBuscada);
             c.SaveChanges();
-            
+
             return LocalRedirect("~/Equipe/Listar");
         }
 
