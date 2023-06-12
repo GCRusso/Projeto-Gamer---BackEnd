@@ -30,6 +30,8 @@ namespace Projeto_Gamer___BackEnd.Controllers
             ViewBag.Equipe = c.Equipe.ToList(); //em uma mala de equipe = adiciona as equipes, armazena as equipes
             return View(); //encaminha para a view de equipe
         }
+        //todo // ------------------------------------------------------------------------------------------------
+
 
 
 
@@ -94,6 +96,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
             // ~ = LOCALHOST
             return LocalRedirect("~/Equipe/Listar");
         }
+        //todo // ------------------------------------------------------------------------------------------------
+
+
+
 
         //todo Método EXCLUIR
         //inserido o id para sinalizar que está utilizando um parâmetro para exclusão, por exemplo: http://localhost:5041/Equipe/Excluir/21 irá excluir o ID 21
@@ -110,6 +116,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
             //este return faz a função de listar novamente a lista, mas já atualizada.
             return LocalRedirect("~/Equipe/Listar");
         }
+        //todo // ------------------------------------------------------------------------------------------------
+
+
+
 
         //todo Método EDITAR
         [Route("Editar/{id}")]
@@ -126,6 +136,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
 
             return View("Edit");
         }
+        //todo // ------------------------------------------------------------------------------------------------
+
+
+
 
         //todo Método ATUALIZAR
         [Route("Atualizar")]
@@ -177,4 +191,9 @@ namespace Projeto_Gamer___BackEnd.Controllers
             return View("Error!");
         }
     }
+    //todo // ------------------------------------------------------------------------------------------------
+
+
+
+    
 }

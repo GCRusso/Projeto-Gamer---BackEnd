@@ -27,6 +27,10 @@ namespace Projeto_Gamer___BackEnd.Controllers
             ViewBag.UserName = HttpContext.Session.GetString("UserName");
             return View();
         }
+        //todo // ------------------------------------------------------------------------------------------------
+
+
+
 
         //todo // Método LOGAR
         [Route("Logar")]
@@ -49,9 +53,22 @@ namespace Projeto_Gamer___BackEnd.Controllers
             }
 
             //retorno da message que foi criada uma propriedade
-            Message = "Dados Inválidos!"; 
+            Message = "Dados Inválidos!";
             return LocalRedirect("~/Login/Login/");
         }
+        //todo // ------------------------------------------------------------------------------------------------
+
+
+        //todo //MÉTODO DESLOGAR
+        [Route("Logout")]
+        public IActionResult Logout()
+        {
+            // remove o usuário logado
+            HttpContext.Session.Remove("UserName");
+            //Redireciona para o ínicio do site(pasta raíz) e deslogado
+            return LocalRedirect("~/");
+        }
+        //todo // ------------------------------------------------------------------------------------------------
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
