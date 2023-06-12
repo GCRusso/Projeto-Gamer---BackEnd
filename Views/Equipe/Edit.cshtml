@@ -4,19 +4,30 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edição de Equipe</h1>
-@*method = post = porque sao dados sensiveis que nao devem mostrar no URL*@
-@*enctype="multipart/form-data = quando ha um formulario com varios tipos de dados, neste caso temos texto e imagem *@
-<form method = "post" action='@Url.Action("Atualizar")' enctype="multipart/form-data">
-    @* para deixar oculto o nosso id *@
-    <input type="hidden" name = "IdEquipe" value="@ViewBag.Equipe.IdEquipe">
+@*Para evitar que acessem as outras abas sem estar logado existe esta validação com IF E ELSE
+if = força o usuário a se logar caso contrário ele irá sempre retornar para view de LOGIN
+else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX  *@
+@if (ViewBag.UserName == null)
+{
+    <a asp-area="" asp-controller="Login" asp-action="Index"></a>
+}
+else
+{
+    <h1>Edição de Equipe</h1>
+    @*method = post = porque sao dados sensiveis que nao devem mostrar no URL*@
+    @*enctype="multipart/form-data = quando ha um formulario com varios tipos de dados, neste caso temos texto e imagem *@
+    <form method="post" action='@Url.Action("Atualizar")' enctype="multipart/form-data">
+        @* para deixar oculto o nosso id *@
+        <input type="hidden" name="IdEquipe" value="@ViewBag.Equipe.IdEquipe">
 
-    <label for="">Nome</label>
-    @* required no nome, nao será possivel deixar o INPUT vazio *@
-    <input type="text" name="Nome" value="@ViewBag.Equipe.NomeEquipe" required>
+        <label for="">Nome</label>
+        @* required no nome, nao será possivel deixar o INPUT vazio *@
+        <input type="text" name="Nome" value="@ViewBag.Equipe.NomeEquipe" required>
 
-    <label for="">Imagem</label>
-    <input type="file" name="Imagem" value="@ViewBag.Equipe.Imagem">
+        <label for="">Imagem</label>
+        <input type="file" name="Imagem" value="@ViewBag.Equipe.Imagem">
 
-    <button>Atualizar</button>
-</form> 
+        <button>Atualizar</button>
+    </form>
+}
+

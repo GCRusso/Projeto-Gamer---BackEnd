@@ -4,59 +4,72 @@
     //aqui é o titulo que fica na página, titulo de browser
     ViewData["Title"] = "Equipe";
 }
+
+@*Para evitar que acessem as outras abas sem estar logado existe esta validação com IF E ELSE
+if = força o usuário a se logar caso contrário ele irá sempre retornar para view de LOGIN
+else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX  *@
+@if (ViewBag.UserName == null)
+{
+    <a asp-area="" asp-controller="Login" asp-action="Index"></a>
+}
+else
+{
 <h1>CADASTRO DE EQUIPES</h1>
 
-@*todo CADASTRO DE EQUIPES *@
-@* quando se cria um form tem que utilizar form aqui tambem *@
-@*Enctype = fornece um array com alguns arquivos anexados, com uma lista de objetos cadastrados, para carregar o file da
+    @*todo CADASTRO DE EQUIPES *@
+    @* quando se cria um form tem que utilizar form aqui tambem *@
+    @*Enctype = fornece um array com alguns arquivos anexados, com uma lista de objetos cadastrados, para carregar o file da
 imagem*@
-<form method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+    <form method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
 
-    @* Label = Titulo/Nome do form *@
-    <label for="">Nome</label>
-    <input type="text" name="Nome">
+        @* Label = Titulo/Nome do form *@
+        <label for="">Nome</label>
+        <input type="text" name="Nome">
 
-    <label for="">Imagem</label>
-    <input type="file" name="Imagem">
+        <label for="">Imagem</label>
+        <input type="file" name="Imagem">
 
-    <button type="submit">Cadastrar</button>
-</form>
+        <button type="submit">Cadastrar</button>
+    </form>
 
 
-@*todo TABELA COM EQUIPES *@
-<table class="table table-striped table-responsive"> @*este comando deixa a tabela mais organizada é um comando do
+    @*todo TABELA COM EQUIPES *@
+    <table class="table table-striped table-responsive"> @*este comando deixa a tabela mais organizada é um comando do
     BOOTSTRAP*@
-    <thead>
-        <th>Id</th>
-        <th>Nome</th>
-        <th>Imagem</th>
-        <th>Ações</th>
-    </thead>
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Imagem</th>
+            <th>Ações</th>
+        </thead>
 
-    <tbody>
-        @*Equipe é um objeto chamar ele como tal, vira o objeto "equipe"*@
-        @foreach (Equipe equipe in ViewBag.Equipe)
-        {
-            <tr>
-                @*para utilizar um objeto dentro de uma tag HTML tem que chamar pelo arroba*@
-                <td>@equipe.IdEquipe</td>
-                <td>@equipe.NomeEquipe</td>
-                <td>
-                    <img src="/img/Equipes/@equipe.Imagem" alt="Imagem da Equipe @equipe.NomeEquipe" width="50px">
-                </td>
+        <tbody>
+            @*Equipe é um objeto chamar ele como tal, vira o objeto "equipe"*@
+            @foreach (Equipe equipe in ViewBag.Equipe)
+            {
+                <tr>
+                    @*para utilizar um objeto dentro de uma tag HTML tem que chamar pelo arroba*@
+                    <td>@equipe.IdEquipe</td>
+                    <td>@equipe.NomeEquipe</td>
+                    <td>
+                        <img src="/img/Equipes/@equipe.Imagem" alt="Imagem da Equipe @equipe.NomeEquipe" width="50px">
+                    </td>
 
-                <td>
-                    @*asp area = alt da imagem *@
-                    @*asp-controller = é da classe controller*@
-                    @*asp-action = é uma ação, no caso excluir*@
-                    @*asp-route-id = rota da onde vc ira excluir*@
-                    @*Entre os <a></a> foi inserido a palavra Excluir, para apresentar como um botão*@
-                    <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a>
-                    
-                    <a asp-area="" asp-controller="Equipe" asp-action="Editar" asp-route-id="@equipe.IdEquipe">Editar</a>
-                </td>
-            </tr>
-        }
+                    <td>
+                        @*asp area = alt da imagem *@
+                        @*asp-controller = é da classe controller*@
+                        @*asp-action = é uma ação, no caso excluir*@
+                        @*asp-route-id = rota da onde vc ira excluir*@
+                        @*Entre os <a></a> foi inserido a palavra Excluir, para apresentar como um botão*@
+                        <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a>
 
-    </tbody>
-</table>
+                        <a asp-area="" asp-controller="Equipe" asp-action="Editar" asp-route-id="@equipe.IdEquipe">Editar</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+}
+

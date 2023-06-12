@@ -4,7 +4,17 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edição de Jogadores</h1>
+@*Para evitar que acessem as outras abas sem estar logado existe esta validação com IF E ELSE
+if = força o usuário a se logar caso contrário ele irá sempre retornar para view de LOGIN
+else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX  *@
+@if (ViewBag.UserName == null)
+{
+    <a asp-area="" asp-controller="Login" asp-action="Index"></a>
+}
+
+else
+{
+    <h1>Edição de Jogadores</h1>
 @*method = post = porque sao dados sensiveis que nao devem mostrar no URL*@
 @*enctype="multipart/form-data = quando ha um formulario com varios tipos de dados, neste caso temos texto e imagem *@
 <form method="post" action='@Url.Action("Atualizar")'>
@@ -44,3 +54,4 @@
 
     <button>Atualizar</button>
 </form>
+}

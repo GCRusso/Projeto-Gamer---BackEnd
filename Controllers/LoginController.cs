@@ -54,6 +54,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
 
             //retorno da message que foi criada uma propriedade
             Message = "Dados Inválidos!";
+            
             return LocalRedirect("~/Login/Login/");
         }
         //todo // ------------------------------------------------------------------------------------------------
