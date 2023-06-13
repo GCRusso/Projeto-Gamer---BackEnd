@@ -66,7 +66,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
         {
             // remove o usuário logado
             HttpContext.Session.Remove("UserName");
-            //Redireciona para o ínicio do site(pasta raíz) e deslogado
+            //Redireciona para o ínicio do site(pasta raíz) e desloga
             return LocalRedirect("~/");
         }
         //todo // ------------------------------------------------------------------------------------------------
