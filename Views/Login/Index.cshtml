@@ -4,19 +4,30 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>TELA DE LOGIN</h1>
+<link rel="stylesheet" href="~/css/login.css">
+<!-- FORMULÁRIO DE LOGIN -->
+    <main class="fundo-login">
+        <div class="bkg-login">
+            <form class="frm-login" method="post" action='@Url.Action("Logar")'>
+                <div class="login-title">
+                    <hr class="login-line">
+                    <h1>Login</h1>
+                </div>
+                <div class="frm-linha">
+                    <div class="bkg-input">
+                        <img src="~/assets/vector-user.svg" alt="ícone de usuário">
+                        <input type="email" name="Email" id="email" placeholder="Digite seu e-mail:">
+                    </div>
+                </div>
+                <div class="frm-linha">
+                    <div class="bkg-input">
+                        <img src="~/assets/vector-key.svg" alt="ícone de chave">
+                        <input type="password" name="Senha" id="password" placeholder="Digite sua senha:">
+                    </div>
+                </div>
 
-<h2>
-    @TempData.Peek("Message") @*TEMPDATA CRIADA NA CONTROLLER LOGIN, PARA MAIS DETALHES VERIFICAR LÁ*@
-</h2>
+                <button class="btn-logar">Logar</button>
+            </form>
+        </div>
 
-<form method="post" action='@Url.Action("Logar")'>
-    
-    <label for="">Email</label>
-    <input type="email" name="Email" required>
-
-    <label for="">Senha</label>
-    <input type="password" name="Senha" required>
-
-    <button type="submit">Logar</button>
-</form>
+    </main>

@@ -241,6 +241,18 @@
       "PackagePath": "staticwebassets\\assets\\vector-user.svg"
     },
     {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\Header-Footer.css",
+      "PackagePath": "staticwebassets\\css\\Header-Footer.css"
+    },
+    {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\equipes.css",
+      "PackagePath": "staticwebassets\\css\\equipes.css"
+    },
+    {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -355,6 +367,10 @@
     {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\bulls.png",
       "PackagePath": "staticwebassets\\img\\Equipes\\bulls.png"
+    },
+    {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\download.jfif",
+      "PackagePath": "staticwebassets\\img\\Equipes\\download.jfif"
     },
     {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\img\\Equipes\\download.png",
