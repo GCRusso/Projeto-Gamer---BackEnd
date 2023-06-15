@@ -7,71 +7,69 @@
 
 @* @*Para evitar que acessem as outras abas sem estar logado existe esta validação com IF E ELSE
 if = força o usuário a se logar caso contrário ele irá sempre retornar para view de LOGIN
-else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX 
+else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX
 @if (ViewBag.UserName == null)
 {
-    <a asp-area="" asp-controller="Login" asp-action="Index"></a>
+<a asp-area="" asp-controller="Login" asp-action="Index"></a>
 }
 else
 {
-    <h1>CADASTRO DE EQUIPES</h1>
+<h1>CADASTRO DE EQUIPES</h1>
 
-    @*todo CADASTRO DE EQUIPES 
-    @* quando se cria um form tem que utilizar form aqui tambem 
-    @*Enctype = fornece um array com alguns arquivos anexados, com uma lista de objetos cadastrados, para carregar o file da
+@*todo CADASTRO DE EQUIPES
+@* quando se cria um form tem que utilizar form aqui tambem
+@*Enctype = fornece um array com alguns arquivos anexados, com uma lista de objetos cadastrados, para carregar o file da
 imagem
-    <form method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+<form method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
 
-        @* Label = Titulo/Nome do form 
-        <label for="">Nome</label>
-        <input type="text" name="Nome">
+@* Label = Titulo/Nome do form
+<label for="">Nome</label>
+<input type="text" name="Nome">
 
-        <label for="">Imagem</label>
-        <input type="file" name="Imagem">
+<label for="">Imagem</label>
+<input type="file" name="Imagem">
 
-        <button type="submit">Cadastrar</button>
-    </form>
-
-
-    @*todo TABELA COM EQUIPES 
-    <table class="table table-striped table-responsive"> @*este comando deixa a tabela mais organizada é um comando do
-    BOOTSTRAP
-        <thead>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Imagem</th>
-            <th>Ações</th>
-        </thead>
-
-        <tbody>
-            @*Equipe é um objeto chamar ele como tal, vira o objeto "equipe"
-            @foreach (Equipe equipe in ViewBag.Equipe)
-            {
-                <tr>
-                    @*para utilizar um objeto dentro de uma tag HTML tem que chamar pelo arroba
-                    <td>@equipe.IdEquipe</td>
-                    <td>@equipe.NomeEquipe</td>
-                    <td>
-                        <img src="/img/Equipes/@equipe.Imagem" alt="Imagem da Equipe @equipe.NomeEquipe" width="50px">
-                    </td>
-
-                    <td>
-                        @*asp area = alt da imagem 
-                        @*asp-controller = é da classe controller
-                        @*asp-action = é uma ação, no caso excluir
-                        @*asp-route-id = rota da onde vc ira excluir
-                        @*Entre os <a></a> foi inserido a palavra Excluir, para apresentar como um botão
-                        <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a>
-
-                        <a asp-area="" asp-controller="Equipe" asp-action="Editar" asp-route-id="@equipe.IdEquipe">Editar</a>
-                    </td>
-                </tr>
-            }
-
-        </tbody>
-    </table> *@
+<button type="submit">Cadastrar</button>
+</form>
 
 
+@*todo TABELA COM EQUIPES
+<table class="table table-striped table-responsive"> @*este comando deixa a tabela mais organizada é um comando do
+BOOTSTRAP
+<thead>
+<th>Id</th>
+<th>Nome</th>
+<th>Imagem</th>
+<th>Ações</th>
+</thead>
+
+<tbody>
+@*Equipe é um objeto chamar ele como tal, vira o objeto "equipe"
+@foreach (Equipe equipe in ViewBag.Equipe)
+{
+<tr>
+@*para utilizar um objeto dentro de uma tag HTML tem que chamar pelo arroba
+<td>@equipe.IdEquipe</td>
+<td>@equipe.NomeEquipe</td>
+<td>
+<img src="/img/Equipes/@equipe.Imagem" alt="Imagem da Equipe @equipe.NomeEquipe" width="50px">
+</td>
+
+<td>
+@*asp area = alt da imagem
+@*asp-controller = é da classe controller
+@*asp-action = é uma ação, no caso excluir
+@*asp-route-id = rota da onde vc ira excluir
+@*Entre os <a></a> foi inserido a palavra Excluir, para apresentar como um botão
+<a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a>
+
+<a asp-area="" asp-controller="Equipe" asp-action="Editar" asp-route-id="@equipe.IdEquipe">Editar</a>
+</td>
+</tr>
+}
+
+</tbody>
+</table> *@
 
 
 
@@ -80,78 +78,92 @@ imagem
 
 
 
-    <!-- MAIN -->
-    <main>
-        @if (ViewBag.UserName == null)
-        {
-            <a asp-area="" asp-controller="Login" asp-action="Index"></a>
-        }
-        else
-        {
-
-            <section class="container-grid cadastro-equipes">
 
 
-                <form class="frm-cad-equipe" method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
-                    <div class="cadequipe-titulo">
-                        <h1>Cadastro de Equipes</h1>
-                        <hr>
-                    </div>
+<!-- MAIN -->
+<main>
+    @if (ViewBag.UserName == null)
+    {
+        <a asp-area="" asp-controller="Login" asp-action="Index"></a>
+    }
+    else
+    {
+
+        <section class="container-grid cadastro-equipes">
 
 
-                    <input class="campo-entrada" type="text" placeholder="Digite o nome da sua equipe:" name="Nome" required>
-
-                    @* <label for="">Imagem</label>
-                    <input type="file" name="Imagem"> *@
-                    <label class="foto" for="foto-file" >
-                        Nenuma imagem selecionada...
-                        <input type="file" id="foto-file" name="Imagem">
-                    </label>
-
-                    <button>Cadastro</button>
+            <form class="frm-cad-equipe" method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+                <div class="cadequipe-titulo">
+                    <h1>Cadastro de Equipes</h1>
+                    <hr>
+                </div>
 
 
+                <input class="campo-entrada" type="text" placeholder="Digite o nome da sua equipe:" name="Nome" required>
 
-                    <!-- <select class="equipeid" id="equipeid">
-                                    <option value="">Selecione uma Equipe</option>
-                                    <option value="x">Equipe X</option>
-                                    <option value="y">Equipe Y</option>
-                                    </select> -->
-                </form>
+                @* <label for="">Imagem</label>
+            <input type="file" name="Imagem"> *@
+                <label class="foto" for="foto-file">
 
-                <!-- TABELA CADASTRO DE EQUIPES -->
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nome</th>
-                            <th>Imagem</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    @foreach (Equipe equipe in ViewBag.Equipe)
+                    <input type="file" id="foto-file" name="Imagem">
+                    @if (ViewBag.Imagem != null)
                     {
-                        <tbody>
-                            <tr>
-                                <td>@equipe.IdEquipe</td>
-                                <td>@equipe.NomeEquipe</td>
-                                <td><img src="/img/Equipes/@equipe.Imagem" alt="Imagem da Equipe @equipe.NomeEquipe" width="50px">
-                                </td>
-
-                                <td>
-                                    <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">
-                                        <img class="yellow-trash" src="~/assets/trash.png" alt="">
-                                    </a>
-                                    <a asp-area="" asp-controller="Equipe" asp-action="Editar"
-                                        asp-route-id="@equipe.IdEquipe"><img src="~/assets/engrenagem.png" alt="" style="width: 15px;"></a>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <h3>Imagem Selecionada.</h3>
                     }
 
-                </table>
-            </section>
+                    else
+                    {
+                        <h3>Selecionar Imagem...</h3>
+                    }
 
-        }
-    </main>
+                </label>
+
+                <button>Cadastro</button>
+
+
+
+                <!-- <select class="equipeid" id="equipeid">
+                                        <option value="">Selecione uma Equipe</option>
+                                        <option value="x">Equipe X</option>
+                                        <option value="y">Equipe Y</option>
+                                        </select> -->
+            </form>
+
+            <!-- TABELA CADASTRO DE EQUIPES -->
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Imagem</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                @foreach (Equipe equipe in ViewBag.Equipe)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@equipe.IdEquipe</td>
+                            <td>@equipe.NomeEquipe</td>
+                            <td><img src="/img/Equipes/@equipe.Imagem" alt="Imagem da Equipe @equipe.NomeEquipe" width="50px">
+                            </td>
+
+                            <td>
+                                <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">
+                                    <img class="yellow-trash" src="~/assets/trash.png" alt="">
+                                </a>
+                                <a asp-area="" asp-controller="Equipe" asp-action="Editar" asp-route-id="@equipe.IdEquipe">
+                                    <img src="~/assets/engrenagem.png" alt="" style="width: 15px;">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+
+            </table>
+        </section>
+
+    }
+</main>

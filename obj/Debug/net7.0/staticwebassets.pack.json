@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\assets\\Botao_voltar_ao_topo.svg"
     },
     {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\assets\\engrenagem.png",
+      "PackagePath": "staticwebassets\\assets\\engrenagem.png"
+    },
+    {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\assets\\envelope-icon.png",
       "PackagePath": "staticwebassets\\assets\\envelope-icon.png"
     },
@@ -247,6 +251,10 @@
     {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\equipes.css",
       "PackagePath": "staticwebassets\\css\\equipes.css"
+    },
+    {
+      "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\jogadores.css",
+      "PackagePath": "staticwebassets\\css\\jogadores.css"
     },
     {
       "Id": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\login.css",

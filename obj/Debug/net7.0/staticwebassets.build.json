@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gbE3PDshoQBITnpS0PmHuHEyVdnwoSWQ5mtrpB9k7+k=",
+  "Hash": "bTmPIap54VsQbJVvh0mweJvS1vkrcu6DnOfgiuYHF6c=",
   "Source": "Projeto Gamer - BackEnd",
   "BasePath": "_content/Projeto Gamer - BackEnd",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\Botao_voltar_ao_topo.svg"
+    },
+    {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\assets\\engrenagem.png",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "assets/engrenagem.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\engrenagem.png"
     },
     {
       "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\assets\\envelope-icon.png",
@@ -1086,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Header-Footer.css"
+    },
+    {
+      "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\jogadores.css",
+      "SourceId": "Projeto Gamer - BackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\",
+      "BasePath": "_content/Projeto Gamer - BackEnd",
+      "RelativePath": "css/jogadores.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\jogadores.css"
     },
     {
       "Identity": "C:\\Users\\23655858841\\Desktop\\Projeto Gamer - BackEnd\\wwwroot\\css\\login.css",

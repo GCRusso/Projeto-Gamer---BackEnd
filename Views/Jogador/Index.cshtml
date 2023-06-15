@@ -5,9 +5,10 @@
     ViewData["Title"] = "Jogador";
 }
 
-@*Para evitar que acessem as outras abas sem estar logado existe esta validação com IF E ELSE
+
+@* @*Para evitar que acessem as outras abas sem estar logado existe esta validação com IF E ELSE
 if = força o usuário a se logar caso contrário ele irá sempre retornar para view de LOGIN
-else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX  *@
+else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX 
 @if (ViewBag.UserName == null)
 {
     <a asp-area="" asp-controller="Login" asp-action="Index"></a>
@@ -16,7 +17,7 @@ else
 {
     <h1>CADASTRO DE JOGADORES</h1>
 
-    @*todo CADASTRO DE JOGADORES*@
+    @*todo CADASTRO DE JOGADORES
     <form method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
 
         <label for="">Nome</label>
@@ -31,7 +32,7 @@ else
         <label for="">ID Equipe</label>
 
         @*Criado um OPTION para a seleção de Equipes e o foreach é para mostrar todas as Equipes já existentes para o
-    usuário selecionar dentro do SELECT*@
+    usuário selecionar dentro do SELECT
         <select name="IdEquipe" id="IdEquipe">
             <option value="0">Selecione a Equipe</option>
             @foreach (Equipe equipe in ViewBag.Equipe)
@@ -44,7 +45,7 @@ else
         <button type="submit">Cadastrar</button>
     </form>
 
-    @*todo TABELA DOS JOGADORES*@
+    @*todo TABELA DOS JOGADORES
     <table class="table table-striped table-responsive">
 
         <thead>
@@ -64,7 +65,7 @@ else
                     <td>@jogador.NomeJogador</td>
                     <td>@jogador.Email</td>
                     <td>@jogador.Equipe.NomeEquipe</td>
-                    @*Colocar o caminho inteiro da imagem, aqui esta entrando na pasta wwroot e acessando a pasta de img*@
+                    @*Colocar o caminho inteiro da imagem, aqui esta entrando na pasta wwroot e acessando a pasta de img
                     <td>
                         <img src="/img/Equipes/@jogador.Equipe.Imagem" alt="Imagem da Equipe @jogador.Equipe.NomeEquipe"
                             width="50px">
@@ -79,5 +80,90 @@ else
             }
         </tbody>
     </table>
-}
+
+
+} *@
+
+
+
+
+
+
+<link rel="stylesheet" href="~/css/jogadores.css">
+
+
+<!-- MAIN -->
+<main>
+
+    <section class="container-grid cadastro-equipes">
+
+        <form class="frm-cad-equipe" method="post" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+            <div class="cadequipe-titulo">
+                <h1>Cadastro de Jogadores</h1>
+                <hr>
+            </div>
+
+
+            <input class="campo-entrada" type="text" id="nome-jogador" name="Nome" placeholder="Digite o nome do Jogador:">
+            <input class="campo-entrada" type="email" id="email-jogador" name="Email" placeholder="Digite o Email do Jogador:">
+            
+                <select class="campo-entrada" name="IdEquipe" id="IdEquipe" id="equipe-select">
+                    <option hidden value="0">Selecione a Equipe</option>
+                    @foreach (Equipe equipe in ViewBag.Equipe)
+                    {
+                        <option style="color: Black;" value="@equipe.IdEquipe">@equipe.NomeEquipe</option>
+                    }
+                </select>
+            
+            <input class="campo-entrada" type="password" id="senha" name="Senha" placeholder="Digite a Senha:">
+            <button type="submit">Cadastrar</button>
+
+
+
+
+        </form>
+
+        <!-- TABELA CADASTRO DE EQUIPES -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id Equipe</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Nome Equipe</th>
+                    <th>Imagem Equipe</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Jogador jogador in ViewBag.Jogador)
+                {
+                    <tr>
+                        <td>@jogador.IdJogador</td>
+                        <td>@jogador.NomeJogador</td>
+                        <td>@jogador.Email</td>
+                        <td>@jogador.Equipe.NomeEquipe</td>
+                        @*Colocar o caminho inteiro da imagem, aqui esta entrando na pasta wwroot e acessando a pasta de
+                    img*@
+                        <td>
+                            <img src="/img/Equipes/@jogador.Equipe.Imagem" alt="Imagem da Equipe @jogador.Equipe.NomeEquipe"
+                                width="50px">
+                        </td>
+                        <td>    
+                            <a asp-area="" asp-controller="Jogador" asp-action="Excluir" asp-route-id="@jogador.IdJogador">
+                                <img class="yellow-trash" src="~/assets/trash.png" alt="">
+                            </a>
+
+                            <a asp-area="" asp-controller="Jogador" asp-action="Editar" asp-route-id="@jogador.IdJogador">
+                                <img src="~/assets/engrenagem.png" alt="" style="width: 15px;">
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+</main>
 
