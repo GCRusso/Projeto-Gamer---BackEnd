@@ -197,8 +197,25 @@ main .cadastro-equipes table tr {
     align-items: center;
 }
 
+
+/* ******************* BARRA DE ROLAGEM ********************************* */
+body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: orange;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: purple;    /* color of the scroll thumb */
+    border-radius: 10px;       /* roundness of the scroll thumb */
+    border: 2px solid grey;  /* creates padding around scroll thumb */
+  }
+/* FIM DA BARRA DE ROLAGEM*/
+
 main .cadastro-equipes table tbody tr {
-    height: 70px;
+    min-height: 70px;
     margin-bottom: 20px;
     /* efeito da borda e do fundo glass */
     border: 2px solid transparent;
