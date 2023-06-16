@@ -26,7 +26,9 @@ main .cadastro-equipes {
 
 }
 
+
 main .cadastro-equipes::before {
+    height: 100%;
     content: "";
     position: absolute;
     z-index: 0;
@@ -157,10 +159,15 @@ main .cadastro-equipes table {
 /* tbody */
 main .cadastro-equipes thead,
 main .cadastro-equipes tbody {
+    max-height: 635px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+}
+
+main .cadastro-equipes tbody{
+    overflow-y: scroll;
 }
 
 /* linha do cabeçalho da tabela */

@@ -105,6 +105,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
             Jogador jogadorAtualizado = new Jogador();
 
             jogadorAtualizado.IdJogador = int.Parse(form["IdJogador"].ToString());
+            jogadorAtualizado.IdEquipe = int.Parse(form["IdEquipe"].ToString());
 
             jogadorAtualizado.NomeJogador = form["Nome"].ToString();
             jogadorAtualizado.Email = form["Email"].ToString();
@@ -116,6 +117,7 @@ namespace Projeto_Gamer___BackEnd.Controllers
             jogadorBuscado.NomeJogador = jogadorAtualizado.NomeJogador;
             jogadorBuscado.Email = jogadorAtualizado.Email;
             jogadorBuscado.Senha = jogadorAtualizado.Senha;
+            jogadorBuscado.IdEquipe = jogadorAtualizado.IdEquipe;
 
             c.Jogador.Update(jogadorBuscado);
             c.SaveChanges();

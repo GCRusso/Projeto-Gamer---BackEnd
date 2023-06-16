@@ -1,12 +1,13 @@
 @model Jogador
 
+
 @{
     ViewData["Title"] = "Edit";
 }
 
 @*Para evitar que acessem as outras abas sem estar logado existe esta validação com IF E ELSE
 if = força o usuário a se logar caso contrário ele irá sempre retornar para view de LOGIN
-else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX  *@
+else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E INDEX 
 @if (ViewBag.UserName == null)
 {
     <a asp-area="" asp-controller="Login" asp-action="Index"></a>
@@ -15,43 +16,97 @@ else = insere todo o conteudo da pagina FAZER EM TODAS AS VIEWS NO CASO EDIT E I
 else
 {
     <h1>Edição de Jogadores</h1>
-@*method = post = porque sao dados sensiveis que nao devem mostrar no URL*@
-@*enctype="multipart/form-data = quando ha um formulario com varios tipos de dados, neste caso temos texto e imagem *@
-<form method="post" action='@Url.Action("Atualizar")'>
-    @* para deixar oculto o nosso id *@
-    <input type="hidden" name="IdJogador" value="@ViewBag.Jogador.IdJogador">
+    @*method = post = porque sao dados sensiveis que nao devem mostrar no URL
+    @*enctype="multipart/form-data = quando ha um formulario com varios tipos de dados, neste caso temos texto e imagem 
+    @*action='@Url.Action("Atualizar")' = se deixar a action com aspas simples no meio com outro valor do lado e nao por ultimo ele vai da erro e ele nao irá mostrar onde é, SE for com aspas simples deixa por ultimo, caso aspas duplas ele ira ficar vermelho porem ira funcionar tambem!
+    <form method="post" action="@Url.Action("Atualizar")">
+        @* para deixar oculto o nosso id 
+        <input type="hidden" name="IdJogador" value="@ViewBag.Jogador.IdJogador">
 
-    <input type="hidden" name="IdEquipe" value="@ViewBag.Jogador.IdEquipe">
 
-    <label for="">Nome</label>
-    @* required no nome, nao será possivel deixar o INPUT vazio *@
-    <input type="text" name="Nome" value="@ViewBag.Jogador.NomeJogador">
+        <label for="">Nome</label>
+        @* required no nome, nao será possivel deixar o INPUT vazio 
+        <input type="text" name="Nome" value="@ViewBag.Jogador.NomeJogador">
 
-    <label for="">Email</label>
-    <input type="email" name="Email" value="@ViewBag.Jogador.Email">
+        <label for="">Email</label>
+        <input type="email" name="Email" value="@ViewBag.Jogador.Email">
 
-    <label for="">Senha</label>
-    <input type="password" name="Senha" value="@ViewBag.Jogador.Senha">
+        <label for="">Senha</label>
+        <input type="password" name="Senha" value="@ViewBag.Jogador.Senha">
 
-    @*Validação para mostrar quando for editar o que já está na nossa lista, já vem preenchido os campos*@
-    <label for="">Equipe</label>
-    <select name="IdEquipe" id="IdEquipe">
-        <option value="0">Selecione uma opção: </option>
-        @foreach (Equipe equipe in ViewBag.Equipe)
+        @*Validação para mostrar quando for editar o que já está na nossa lista, já vem preenchido os campos
+        <label for="">Equipe</label>
+        <select name="IdEquipe" id="IdEquipe">
+            <option value="0">Selecione uma opção: </option>
+            @foreach (Equipe equipe in ViewBag.Equipe)
+            {
+                @if (equipe.IdEquipe == @ViewBag.Jogador.IdEquipe)
+                {
+                    @*selected = aqui que ele mostra o campo preenchido
+                    <option value="equipe.IdEquipe" selected>@equipe.NomeEquipe</option>
+                }
+
+                else
+                {
+                    <option value="@equipe.IdEquipe">@equipe.NomeEquipe</option>
+                }
+            }
+        </select>
+
+        <button type="submit">Atualizar</button>
+    </form>
+} *@
+
+
+
+
+
+@*!/*******************************************************CSS*******************************************@
+
+<link rel="stylesheet" href="~/css/jogadores.css">
+
+
+<!-- MAIN -->
+<main>
+
+    <section class="container-grid cadastro-equipes">
+        @if (ViewBag.UserName == null)
         {
-            @if (equipe.IdEquipe == @ViewBag.Jogador.IdEquipe)
-            {
-                @*selected = aqui que ele mostra o campo preenchido*@
-                <option value="equipe.IdEquipe" selected>@equipe.NomeEquipe</option>
-            }
-            
-            else
-            {
-                <option value="@equipe.IdEquipe">@equipe.NomeEquipe</option>
-            }
+            <a asp-area="" asp-controller="Login" asp-action="Index"></a>
         }
-    </select>
 
-    <button>Atualizar</button>
-</form>
-}
+        else
+        {
+            <form class="frm-cad-equipe" method="post"  enctype="multipart/form-data" action="@Url.Action("Atualizar")">
+                <div class="cadequipe-titulo">
+                    <h1>Edição De Jogador</h1>
+                    <hr>
+                </div>
+
+                <input type="hidden" name="IdJogador" value="@ViewBag.Jogador.IdJogador">
+
+                <input class="campo-entrada" type="text" id="nome-jogador" name="Nome" value="@ViewBag.Jogador.NomeJogador"
+                    placeholder="Digite o nome do Jogador:">
+                    
+                <input class="campo-entrada" type="email" id="email-jogador" name="Email" value="@ViewBag.Jogador.Email"
+                    placeholder="Digite o Email do Jogador:">
+
+                <select class="campo-entrada" name="IdEquipe" id="IdEquipe" id="equipe-select">
+                    <option hidden value="0">Selecione a Equipe</option>
+                    @foreach (Equipe equipe in ViewBag.Equipe)
+                    {
+                        <option style="color: Black;" value="@equipe.IdEquipe">@equipe.NomeEquipe</option>
+                    }
+                </select>
+
+                <input class="campo-entrada" type="password" id="senha" name="Senha" value="@ViewBag.Jogador.Senha"
+                    placeholder="Digite a Senha:">
+                <button type="submit">Atualizar</button>
+
+            </form>
+
+        }
+
+    </section>
+
+</main>

@@ -124,10 +124,10 @@ BOOTSTRAP
 
 
                 <!-- <select class="equipeid" id="equipeid">
-                                        <option value="">Selecione uma Equipe</option>
-                                        <option value="x">Equipe X</option>
-                                        <option value="y">Equipe Y</option>
-                                        </select> -->
+                                                <option value="">Selecione uma Equipe</option>
+                                                <option value="x">Equipe X</option>
+                                                <option value="y">Equipe Y</option>
+                                                </select> -->
             </form>
 
             <!-- TABELA CADASTRO DE EQUIPES -->
@@ -141,9 +141,11 @@ BOOTSTRAP
                         <th>Ações</th>
                     </tr>
                 </thead>
-                @foreach (Equipe equipe in ViewBag.Equipe)
-                {
-                    <tbody>
+
+
+                <tbody>
+                    @foreach (Equipe equipe in ViewBag.Equipe)
+                    {
                         <tr>
                             <td>@equipe.IdEquipe</td>
                             <td>@equipe.NomeEquipe</td>
@@ -159,8 +161,8 @@ BOOTSTRAP
                                 </a>
                             </td>
                         </tr>
-                    </tbody>
-                }
+                    }
+                </tbody>
 
             </table>
         </section>
